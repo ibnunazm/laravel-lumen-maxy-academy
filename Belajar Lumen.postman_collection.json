@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "875c1813-aa0d-4baa-9a3b-779e4b792243",
+		"name": "Belajar Lumen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29304744"
+	},
+	"item": [
+		{
+			"name": "Penjualan",
+			"item": [
+				{
+					"name": "Get list penjualan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/penjualan",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get list penjualan - success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/penjualan",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"penjualan"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 17:00:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 17:00:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"nomor\": \"SALE/00001\",\n        \"customer\": \"Joko\"\n    },\n    {\n        \"id\": 2,\n        \"nomor\": \"SALE/00002\",\n        \"customer\": \"Pukis\"\n    },\n    {\n        \"id\": 3,\n        \"nomor\": \"SALE/00003\",\n        \"customer\": \"Sandika\"\n    },\n    {\n        \"id\": 4,\n        \"nomor\": \"SALE/00004\",\n        \"customer\": \"Dodit\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get detail penjualan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/penjualan/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get detail penjualan - success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/penjualan/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"penjualan",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 17:06:58 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 17:06:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"nomor\": \"SALE/00003\",\n        \"customer\": \"Dodit\",\n        \"total\": 2000000,\n        \"alamat\": \"Jakarta\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create penjualan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomor\" : \"SALE/00005\",\r\n    \"customer\" : \"anwar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/penjualan",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update penjualan",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomor\" : \"SALE/00005\",\r\n    \"customer\" : \"anwar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/penjualan/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete penjualan",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/penjualan/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm penjualan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/penjualan/:id/confirm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan",
+								":id",
+								"confirm"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Confirm penjualan - success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"api_token\" : \"ibnu1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/penjualan/:id/confirm",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"penjualan",
+										":id",
+										"confirm"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:03:06 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:03:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"berhasil confirm\"\n}"
+						},
+						{
+							"name": "Confirm penjualan - unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/penjualan/:id/confirm",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"penjualan",
+										":id",
+										"confirm"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:04:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Sep 2023 18:04:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.9"
+								},
+								{
+									"key": "X-Header-One",
+									"value": "Header Value"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Unauthorized\"\n}"
+						}
+					]
+				},
+				{
+					"name": "{{host}}/penjualan/:id/confirm",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"api_token\": \"ibnu1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/penjualan/:id/confirm",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan",
+								":id",
+								"confirm"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Kirim email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"api_token\" : \"ibnu1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/penjualan/:id/send-email",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"penjualan",
+								":id",
+								"send-email"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Belajar-api-menggunakan lumen"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
